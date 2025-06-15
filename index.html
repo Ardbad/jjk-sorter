@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jujutsu Kaisen Character Sorter</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* CSS стили здесь */
+        .character-container { display: flex; justify-content: center; }
+        .character { margin: 20px; text-align: center; cursor: pointer; }
+        .character img { width: 200px; height: 300px; object-fit: cover; }
+        .progress { margin: 20px; text-align: center; }
+        .options { margin: 20px; }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <h1>Jujutsu Kaisen Character Sorter</h1>
+    
+        <div class="options" id="options">
+            <h3>Выберите группы персонажей:</h3>
+            <label>
+                <input type="checkbox" class="group-select" value="Tokyo Jujutsu High" name="group-tokyo" id="group-tokyo"> 
+                Токийская школа
+            </label><br>
+            <label>
+                <input type="checkbox" class="group-select" value="Kyoto Jujutsu High" name="group-kyoto" id="group-kyoto"> 
+                Киотская школа
+            </label><br>
+            <label>
+                <input type="checkbox" class="group-select" value="Sorcerers.users" name="group-sorcerers" id="group-sorcerers"> 
+                Маги
+            </label><br>
+            <label>
+                <input type="checkbox" class="group-select" value="Curses" name="group-curses" id="group-curses"> 
+                Проклятия
+            </label><br>
+            <label>
+                <input type="checkbox" class="group-select" value="Civilians" name="group-civilians" id="group-civilians"> 
+                Миряне
+            </label><br>
+            <button id="start-btn" name="start-sorting">Нажмите, чтобы начать</button>
+        </div>
+    
+        <div id="sorter" style="display:none;">
+            <div class="progress">Номер битвы - <span id="progress">0%</span> отсортирован.</div>
+            <div class="character-container">
+                <div class="character" id="char1">
+                    <img id="img1" src="">
+                    <div id="name1"></div>
+                </div>
+                <div class="character" id="char2">
+                    <img id="img2" src="">
+                    <div id="name2"></div>
+                </div>
+            </div>
+        </div>
+    
+        <div id="results" style="display:none;">
+            <h2>Ваши результаты:</h2>
+            <div class="results-container">
+                <div class="podium" id="podium"></div>
+                <div class="other-results">
+                    <ol id="results-list"></ol>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
